@@ -45,7 +45,7 @@ graph TD
     classDef redis fill:#ffebee,stroke:#c62828,stroke-width:2px;
 
     %% 第一层：前端层
-    subgraph Frontend [第一层：前端层 (Vue.js + Element-Plus)]
+    subgraph Frontend ["第一层：前端层 (Vue.js + Element-Plus)"]
         direction TB
         F1[食材录入页]:::front
         F2[推荐结果页]:::front
@@ -53,15 +53,15 @@ graph TD
     end
 
     %% 第二层：后端服务层
-    subgraph Backend [第二层：后端服务层]
+    subgraph Backend ["第二层：后端服务层"]
         direction TB
-        subgraph JavaService [后端业务服务 (Java Spring Boot)]
+        subgraph JavaService ["后端业务服务 (Java Spring Boot)"]
             B1[用户/权限管理]:::business
             B2[食谱基础服务]:::business
             B3[业务逻辑编排]:::business
         end
         
-        subgraph PyService [算法服务 (Python Flask)]
+        subgraph PyService ["算法服务 (Python Flask)"]
             A1[食材筛选逻辑]:::algo
             A2[协同过滤CF算法]:::algo
             A3[相似度计算引擎]:::algo
@@ -69,15 +69,15 @@ graph TD
     end
 
     %% 第三层：数据支撑层
-    subgraph DataLayer [第三层：数据支撑层]
+    subgraph DataLayer ["第三层：数据支撑层"]
         direction TB
-        subgraph DB [数据层 (MySQL)]
+        subgraph DB ["数据层 (MySQL)"]
             D1[(用户基础信息)]:::db
             D2[(标准化食谱数据)]:::db
             D3[(用户行为日志)]:::db
         end
         
-        subgraph Cache [缓存层 (Redis)]
+        subgraph Cache ["缓存层 (Redis)"]
             R1[(倒排索引数据)]:::redis
             R2[(计算中间结果)]:::redis
             R3[(热门食谱缓存)]:::redis
